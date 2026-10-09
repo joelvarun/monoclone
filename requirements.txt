@@ -1,0 +1,3 @@
+# The library itself needs nothing beyond the standard library of CPython 3.11+.
+# matplotlib is used only by bench/run_bench.py to render docs/before_after.png.
+matplotlib>=3.7

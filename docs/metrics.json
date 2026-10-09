@@ -1,0 +1,399 @@
+{
+  "generated": "2026-10-09 20:35:39",
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "reps": 25,
+  "elapsed_s": 38.2,
+  "calibration": {
+    "dispatch_ns": 105.63332277039687,
+    "saving_ns_per_op": {
+      "scalar/form": 4.860824550089148,
+      "attribute/form": 14.692792450791007,
+      "attribute/cache": 15.420719628801217,
+      "container/form": 5.163540966653575
+    },
+    "breakeven_ops": {
+      "scalar/form": 21.731564610465018,
+      "attribute/form": 7.189465387480509,
+      "attribute/cache": 6.850090353313079,
+      "container/form": 20.45753552699253
+    },
+    "probe_ops_per_call": {
+      "scalar/form": 97.0,
+      "attribute/form": 37.0,
+      "attribute/cache": 37.0,
+      "container/form": 32.0
+    }
+  },
+  "workloads": [
+    {
+      "name": "interval_poly",
+      "note": "interval arithmetic over int and float endpoints",
+      "calls": 5600,
+      "signatures": 2,
+      "sites": 15,
+      "recoverable": 12,
+      "statuses": [
+        "form_thrash"
+      ],
+      "ops_by_bucket": {
+        "scalar/form": 96.0
+      },
+      "ops_per_call": 96.0,
+      "cloned": true,
+      "clones": 2,
+      "ungated_clones": 2,
+      "positions": [
+        0
+      ],
+      "groups": [
+        "(float) x2838",
+        "(int) x2762"
+      ],
+      "covered_share": 1.0,
+      "reason": "predicted net 2.02 ms clears the 0.57 ms floor",
+      "verified_calls": 300,
+      "predicted_speedup": 1.1201174411830495,
+      "predicted_net_ms": 2.021632670613703,
+      "ms": {
+        "baseline": 16.84770011343062,
+        "monoclone": 14.296300010755658,
+        "control": 14.512900030240417,
+        "ungated": 14.737799996510148,
+        "ablation": 18.04460003040731
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 1.178465763921815,
+        "control": 1.1608775694950835,
+        "ungated": 1.1431624881203495,
+        "ablation": 0.9336699114992978
+      },
+      "expect_clone": true
+    },
+    {
+      "name": "horner",
+      "note": "polynomial evaluation at int, float and complex points",
+      "calls": 19200,
+      "signatures": 3,
+      "sites": 4,
+      "recoverable": 2,
+      "statuses": [
+        "form_thrash"
+      ],
+      "ops_by_bucket": {
+        "scalar/form": 32.0
+      },
+      "ops_per_call": 32.0,
+      "cloned": true,
+      "clones": 3,
+      "ungated_clones": 3,
+      "positions": [
+        1
+      ],
+      "groups": [
+        "(float) x8649",
+        "(int) x8649",
+        "(complex) x1902"
+      ],
+      "covered_share": 1.0,
+      "reason": "predicted net 0.96 ms clears the 0.85 ms floor",
+      "verified_calls": 300,
+      "predicted_speedup": 1.0350699467766096,
+      "predicted_net_ms": 0.9583308063831524,
+      "ms": {
+        "baseline": 20.410000113770366,
+        "monoclone": 19.99419997446239,
+        "control": 19.799800124019384,
+        "ungated": 20.182300126180053,
+        "ablation": 22.525500040501356
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 1.0207960378429273,
+        "control": 1.030818492405423,
+        "ungated": 1.0112821623980779,
+        "ablation": 0.9060842190882655
+      },
+      "expect_clone": true
+    },
+    {
+      "name": "moments",
+      "note": "scaled first and second moment over int and float samples",
+      "calls": 6000,
+      "signatures": 2,
+      "sites": 8,
+      "recoverable": 6,
+      "statuses": [
+        "form_thrash"
+      ],
+      "ops_by_bucket": {
+        "scalar/form": 130.0
+      },
+      "ops_per_call": 130.0,
+      "cloned": true,
+      "clones": 2,
+      "ungated_clones": 2,
+      "positions": [
+        1
+      ],
+      "groups": [
+        "(int) x3035",
+        "(float) x2965"
+      ],
+      "covered_share": 1.0,
+      "reason": "predicted net 3.16 ms clears the 0.76 ms floor",
+      "verified_calls": 300,
+      "predicted_speedup": 1.1426605842878204,
+      "predicted_net_ms": 3.1576432124471543,
+      "ms": {
+        "baseline": 22.28759997524321,
+        "monoclone": 19.802700029686093,
+        "control": 19.914800068363547,
+        "ungated": 19.959399942308664,
+        "ablation": 22.750499891117215
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 1.1254828857596197,
+        "control": 1.1191475635574706,
+        "ungated": 1.116646794977006,
+        "ablation": 0.9796531980356731
+      },
+      "expect_clone": true
+    },
+    {
+      "name": "record_score",
+      "note": "attribute bundle with three different class layouts",
+      "calls": 11600,
+      "signatures": 3,
+      "sites": 12,
+      "recoverable": 4,
+      "statuses": [
+        "form_thrash"
+      ],
+      "ops_by_bucket": {
+        "attribute/form": 31.0
+      },
+      "ops_per_call": 31.0,
+      "cloned": true,
+      "clones": 3,
+      "ungated_clones": 3,
+      "positions": [
+        0
+      ],
+      "groups": [
+        "(ReorderedRecord) x3931",
+        "(SlottedRecord) x3866",
+        "(PlainRecord) x3803"
+      ],
+      "covered_share": 1.0,
+      "reason": "predicted net 4.06 ms clears the 0.74 ms floor",
+      "verified_calls": 300,
+      "predicted_speedup": 1.1982132268874228,
+      "predicted_net_ms": 4.058181621167843,
+      "ms": {
+        "baseline": 19.30980011820793,
+        "monoclone": 14.838999835774302,
+        "control": 14.933600090444088,
+        "ungated": 14.931299956515431,
+        "ablation": 20.91709990054369
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 1.3012871710972926,
+        "control": 1.2930438743008892,
+        "ungated": 1.2932430648666926,
+        "ablation": 0.9231585740863637
+      },
+      "expect_clone": true
+    },
+    {
+      "name": "shape_area",
+      "note": "two classes with identical attribute names, inline cache thrash only",
+      "calls": 12000,
+      "signatures": 2,
+      "sites": 14,
+      "recoverable": 5,
+      "statuses": [
+        "cache_thrash"
+      ],
+      "ops_by_bucket": {
+        "attribute/cache": 26.0
+      },
+      "ops_per_call": 26.0,
+      "cloned": true,
+      "clones": 2,
+      "ungated_clones": 2,
+      "positions": [
+        0
+      ],
+      "groups": [
+        "(Box) x6027",
+        "(Panel) x5973"
+      ],
+      "covered_share": 1.0,
+      "reason": "predicted net 3.54 ms clears the 0.69 ms floor",
+      "verified_calls": 300,
+      "predicted_speedup": 1.1829863197710275,
+      "predicted_net_ms": 3.543664650941217,
+      "ms": {
+        "baseline": 16.816299874335527,
+        "monoclone": 15.673100017011166,
+        "control": 15.154700027778745,
+        "ungated": 15.48729999922216,
+        "ablation": 18.638100009411573
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 1.0729402515190718,
+        "control": 1.109642542809231,
+        "ungated": 1.0858122381034858,
+        "ablation": 0.9022539779185592
+      },
+      "expect_clone": true
+    },
+    {
+      "name": "bucket_total",
+      "note": "subscript over a dict and over a list",
+      "calls": 12800,
+      "signatures": 2,
+      "sites": 3,
+      "recoverable": 1,
+      "statuses": [
+        "form_thrash"
+      ],
+      "ops_by_bucket": {
+        "container/form": 32.0
+      },
+      "ops_per_call": 32.0,
+      "cloned": false,
+      "clones": 0,
+      "ungated_clones": 2,
+      "positions": [],
+      "groups": [],
+      "covered_share": 1.0,
+      "reason": "predicted net 0.76 ms from 32.0 recoverable ops per call over 100 percent of calls does not clear the 0.84 ms floor",
+      "verified_calls": 0,
+      "predicted_speedup": 1.0279073930235367,
+      "predicted_net_ms": 0.7628798484802244,
+      "ms": {
+        "baseline": 19.988000160083175,
+        "monoclone": 19.501799950376153,
+        "control": 19.939499907195568,
+        "ungated": 20.33179998397827,
+        "ablation": 23.497899994254112
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 1.0249310428239544,
+        "control": 1.0024323705766616,
+        "ungated": 0.9830905367864127,
+        "ablation": 0.8506292121836757
+      },
+      "expect_clone": true
+    },
+    {
+      "name": "blend",
+      "note": "three-operation body, below the dispatch break-even",
+      "calls": 120000,
+      "signatures": 2,
+      "sites": 3,
+      "recoverable": 3,
+      "statuses": [
+        "form_thrash"
+      ],
+      "ops_by_bucket": {
+        "scalar/form": 3.0
+      },
+      "ops_per_call": 3.0,
+      "cloned": false,
+      "clones": 0,
+      "ungated_clones": 2,
+      "positions": [],
+      "groups": [],
+      "covered_share": 1.0,
+      "reason": "predicted net -10.93 ms from 3.0 recoverable ops per call over 100 percent of calls does not clear the 1.91 ms floor",
+      "verified_calls": 0,
+      "predicted_speedup": 0.8534935206890616,
+      "predicted_net_ms": -10.926101894415531,
+      "ms": {
+        "baseline": 18.604000099003315,
+        "monoclone": 18.830500077456236,
+        "control": 18.213100032880902,
+        "ungated": 31.026999931782484,
+        "ablation": 34.21359998174012
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 0.9879716429451555,
+        "control": 1.021462577233788,
+        "ungated": 0.5996067985917749,
+        "ablation": 0.5437603791747234
+      },
+      "expect_clone": false
+    },
+    {
+      "name": "tag_weight",
+      "note": "60 tag classes, no clone budget covers the population",
+      "calls": 9600,
+      "signatures": 60,
+      "sites": 9,
+      "recoverable": 3,
+      "statuses": [
+        "generic"
+      ],
+      "ops_by_bucket": {
+        "attribute/form": 30.0
+      },
+      "ops_per_call": 30.0,
+      "cloned": false,
+      "clones": 0,
+      "ungated_clones": 4,
+      "positions": [],
+      "groups": [],
+      "covered_share": 0.0,
+      "reason": "no two type groups clear the 2 percent floor",
+      "verified_calls": 0,
+      "predicted_speedup": 0.9539640082265353,
+      "predicted_net_ms": -1.01407989859581,
+      "ms": {
+        "baseline": 15.545899979770184,
+        "monoclone": 16.016399953514338,
+        "control": 15.392399858683348,
+        "ungated": 16.827300190925598,
+        "ablation": 17.00790016911924
+      },
+      "speedup": {
+        "baseline": 1.0,
+        "monoclone": 0.9706238620969929,
+        "control": 1.0099724618965276,
+        "ungated": 0.9238499226485285,
+        "ablation": 0.9140399358644186
+      },
+      "expect_clone": false
+    }
+  ],
+  "summary": {
+    "total_ms": {
+      "baseline": 149.80930043384433,
+      "monoclone": 138.95399984903634,
+      "control": 137.860800139606,
+      "ungated": 153.4842001274228,
+      "ablation": 177.5952000170946
+    },
+    "speedup": {
+      "baseline": 1.0,
+      "monoclone": 1.078121540917149,
+      "control": 1.086670759796393,
+      "ungated": 0.9760568208940883,
+      "ablation": 0.8435436341715558
+    },
+    "noise_floor_pct": 2.9376137903007082,
+    "rebuild_spread_pct": 3.6702291290159117,
+    "decisions_correct": 8,
+    "worst_ungated_speedup": 0.5996067985917749,
+    "best_monoclone_speedup": 1.3012871710972926
+  }
+}
